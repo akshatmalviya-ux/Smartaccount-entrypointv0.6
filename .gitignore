@@ -1,0 +1,15 @@
+# Node modules
+/node_modules
+
+# Environment variables
+.env
+
+# Build / Compilation output
+/dist
+/bundle
+
+# Hardhat files
+/artifacts
+/cache
+/types
+/coverage
