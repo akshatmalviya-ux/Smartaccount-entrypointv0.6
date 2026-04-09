@@ -3,7 +3,7 @@ dotenv.config();
 
 import hre from "hardhat";
 
-const ENTRYPOINT = process.env.ENTRY_POINT;
+const ENTRYPOINT = "0x5FF137D4b0FDCD49DcA30c7CF57E578a026d2789";
 
 async function main() {
   // Guard: fail fast with a clear message
@@ -22,7 +22,7 @@ async function main() {
 
   const Paymaster = await ethers.getContractFactory("Paymaster");
 
-  const paymaster = await Paymaster.deploy(ENTRYPOINT, paymasterSigner.address);
+  const paymaster = await Paymaster.deploy(ENTRYPOINT,paymasterSigner.address);
 
   await paymaster.waitForDeployment();
 
@@ -59,14 +59,59 @@ main().catch((err) => {
   console.error(err);
   process.exitCode = 1;
 });
+
+
 /*
-EOA: 0xd99DD4bbc56Dd688D8426e7a64ea041899041171
+latest
+
+EOA: 0xa5AF15Bd94616b226AC07637b2908FDa06BBdC2a
 ENTRY_POINT: 0x5FF137D4b0FDCD49DcA30c7CF57E578a026d2789
-Paymaster deployed at: 0x2cFd0CA417C9beFe91C269476c43EB2b91ed9244
+Paymaster deployed at: 0x9Bc982384c5971E9484D9595271c209363f318c4
 Depositing 0.01 ETH...
-Deposit complete. Tx: 0x82b8cc0c0a28eda178ef8709f42165681f629354293687507b4e78d0a4d8054b
+Deposit complete. Tx: 0xa355a3a024787717989b50a53bc6de276f5a12edd556cf9005e092ac48e47c34
 
 --- DONE ---
-Paymaster:            0x2cFd0CA417C9beFe91C269476c43EB2b91ed9244
+Paymaster:            0x9Bc982384c5971E9484D9595271c209363f318c4
+Balance after deposit: 0.01 ETH
+
+*/
+/*
+
+EOA: 0xa5AF15Bd94616b226AC07637b2908FDa06BBdC2a
+ENTRY_POINT: 0x5FF137D4b0FDCD49DcA30c7CF57E578a026d2789
+Paymaster deployed at: 0xdCBc9A63F59E5ABD1Fd9e724113f57f4468DBe21
+Depositing 0.01 ETH...
+Deposit complete. Tx: 0x34ff43043f4eb678034848f6344248be39ce90b6cdcd81645749229badbf32e9
+
+--- DONE ---
+Paymaster:            0xdCBc9A63F59E5ABD1Fd9e724113f57f4468DBe21
+Balance after deposit: 0.01 ETH
+lovepreet@Rohit-Chandels-C07F5094PJH8 Smartaccount-entrypointv0.6 % 
+
+*/
+
+/*
+
+
+EOA: 0xa5AF15Bd94616b226AC07637b2908FDa06BBdC2a
+ENTRY_POINT: 0x5FF137D4b0FDCD49DcA30c7CF57E578a026d2789
+Paymaster deployed at: 0x8db6835D2566783dA02D529e193aDAC89d364E9E
+Depositing 0.01 ETH...
+Deposit complete. Tx: 0xad4e9df78bd2ed5036ea9634f8f7ac88eb40f887f596336057f55829cb29e0c0
+
+--- DONE ---
+Paymaster:            0x8db6835D2566783dA02D529e193aDAC89d364E9E
 Balance after deposit: 0.01 ETH
 **/
+/*
+WITHOUT SIGNER VERIFICATION (FOR TESTING PURPOSES ONLY)
+EOA: 0xa5AF15Bd94616b226AC07637b2908FDa06BBdC2a
+ENTRY_POINT: 0x5FF137D4b0FDCD49DcA30c7CF57E578a026d2789
+Paymaster deployed at: 0x3a978FE4B1d1035791713837d42c6E5Cb9135B91
+Depositing 0.01 ETH...
+Deposit complete. Tx: 0x3ecff95d4a2c99cd9cd29a46e00ac979f906ec751a08f4ae3e97a33e105764d9
+
+--- DONE ---
+Paymaster:            0x3a978FE4B1d1035791713837d42c6E5Cb9135B91
+Balance after deposit: 0.01 ETH
+*/

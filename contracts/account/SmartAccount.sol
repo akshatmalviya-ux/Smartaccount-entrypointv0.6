@@ -31,7 +31,7 @@ contract SmartAccount is BaseAccount {
 
         bytes32 hash = userOpHash.toEthSignedMessageHash();
 
-        address signer = hash.recover(userOp.signature);
+        address signer = ECDSA.recover(hash, userOp.signature);
 
         if (signer != owner) {
             return SIG_VALIDATION_FAILED;

@@ -14,7 +14,7 @@ async function main() {
     FACTORY
   );
 
-  // 🔥 Deploy smart account
+  //  Deploy smart account
   const tx = await factory.createAccount(owner.address, SALT);
   await tx.wait();
 

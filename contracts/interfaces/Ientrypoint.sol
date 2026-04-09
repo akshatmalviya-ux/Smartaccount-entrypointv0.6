@@ -8,7 +8,18 @@ interface IEntryPoint {
     function depositTo(address account) external payable;
     function balanceOf(address account) external view returns (uint256);
     function getNonce(address sender, uint192 key) external view returns (uint256);
-
+// add this
+function simulateValidation(UserOperation calldata userOp) external;
     // ✅ Add this function
     function getUserOpHash(UserOperation calldata userOp) external view returns (bytes32);
+function getDepositInfo(address account)
+        external
+        view
+        returns (
+            uint112 deposit,
+            bool staked,
+            uint112 stake,
+            uint32 unstakeDelaySec,
+            uint48 withdrawTime
+        );
 }

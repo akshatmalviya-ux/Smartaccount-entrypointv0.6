@@ -3,7 +3,7 @@ const {ethers}=await hre.network.connect();
 const ENTRYPOINT =
 "0x5FF137D4b0FDCD49DcA30c7CF57E578a026d2789";
 
-const SALT = 1;
+const SALT = 2;
 
 async function main() {
   const { ethers } = await hre.network.connect();
@@ -61,16 +61,40 @@ async function main() {
 main().catch(console.error);
 
 
+/*
 
-/**
- 
-EOA: 0xd99DD4bbc56Dd688D8426e7a64ea041899041171
-Factory: 0x3DFB913bB784E50B553D32b2Bb49481c05b0D03B
-SmartAccount: 0x97f7b7a5E152D78871E74Ec9F84fB9a905F2374C
+EOA: 0xa5AF15Bd94616b226AC07637b2908FDa06BBdC2a
+Factory: 0x7b8d4353c006A5Ab39D63766B46Dd379Fb7cF988
+SmartAccount: 0x0ab8EFB25DA7E6464b13B84D3D9638737Eb065C5
 Deploying SmartAccount...
 SmartAccount deployed
 Depositing...
 Deposit done
 
 SETUP DONE
- */
+*/
+/*
+
+EOA: 0xa5AF15Bd94616b226AC07637b2908FDa06BBdC2a
+Factory: 0x97EE26469ABCC80caAf615E5b98c6eC2348c38Aa
+SmartAccount: 0xEb217134ebEaC9a340a9925a98B77b4f4B6be71C
+Deploying SmartAccount...
+SmartAccount deployed
+Depositing...
+Deposit done
+
+SETUP DONE
+*/
+///
+/*
+EOA: 0xa5AF15Bd94616b226AC07637b2908FDa06BBdC2a
+Factory: 0x97EE26469ABCC80caAf615E5b98c6eC2348c38Aa
+SmartAccount: 0xEb217134ebEaC9a340a9925a98B77b4f4B6be71C
+Deploying SmartAccount...
+SmartAccount deployed
+Depositing...
+Deposit done
+
+SETUP DONE
+lovepreet@Rohit-Chandels-C07F5094PJH8 Smartaccount-entrypointv0.6 % 
+*/
