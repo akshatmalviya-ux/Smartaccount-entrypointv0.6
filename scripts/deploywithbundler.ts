@@ -159,3 +159,33 @@ userOp: {
 }
 UserOp sent to Skandha: 0x92ad86a83025d317d98a70c64339a61cb1261c8dc3ac53230e08a66f35ff9b58
 */
+/*
+🔹 Bundler flow (Skandha)
+1. Receives UserOp
+via RPC (eth_sendUserOperation)
+2. Simulates it
+EntryPoint.simulateValidation()
+
+Checks:
+
+signature ✅
+nonce ✅
+paymaster validation ✅
+3. If valid → stores in mempool
+4. Bundler creates a transaction
+EntryPoint.handleOps([userOp], bundlerAddress)
+
+👉 This is a real Ethereum transaction
+
+5. Execution happens
+
+Inside EntryPoint:
+
+validateUserOp()
+validatePaymasterUserOp()
+execute()
+postOp()
+6. Gas paid
+By:
+Paymaster (if provided) ✅
+Otherwise Smart Account deposit*/

@@ -3,7 +3,8 @@ import hre  from "hardhat";
 const ENTRYPOINT = "0x5FF137D4b0FDCD49DcA30c7CF57E578a026d2789"; // Sepolia EntryPoint
 const TOKEN = "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238"; // Your ERC20 (USDC/GasToken)
 const PRICE_FEED = "0x694AA1769357215DE4FAC081bf1f309aDC325306"; // Chainlink ETH/USD (Sepolia)
-const VERIFYING_SIGNER = "0xd99DD4bbc56Dd688D8426e7a64ea041899041171";
+const VERIFYING_SIGNER = "0xa5AF15Bd94616b226AC07637b2908FDa06BBdC2a";
+
 
 async function main() {
   const { ethers } = await hre.network.connect();
@@ -65,13 +66,14 @@ main().catch((err) => {
 });
 /*
 
-EOA: 0xd99DD4bbc56Dd688D8426e7a64ea041899041171
-Paymaster deployed at: 0xe9577aF5555C37f56216172D83756183c1A9FD89
+EOA: 0xa5AF15Bd94616b226AC07637b2908FDa06BBdC2a
+Paymaster deployed at: 0xD34EeD3E64D4e73852F9231B55f8DF7bB3d22Fdf
 Current deposit: 0.0 ETH
 Depositing 0.01 ETH...
-Deposit successful: 0x2a2eba78e375d43bc8bdbeb80ec5578a581808cecb425a035be19461f1ecb4ff
+Deposit successful: 0x7731b022ea09165815e04d634827529e08e0407b900a759848c7ee703d590b66
 
 --- DONE ---
-Paymaster: 0xe9577aF5555C37f56216172D83756183c1A9FD89
+Paymaster: 0xD34EeD3E64D4e73852F9231B55f8DF7bB3d22Fdf
 Final Balance: 0.01 ETH
+lovepreet@Rohit-Chandels-C07F5094PJH8 Smartaccount-entrypointv0.6 %             
 */
